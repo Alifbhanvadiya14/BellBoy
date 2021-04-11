@@ -98,6 +98,9 @@ class Stores extends StatelessWidget {
                   storeTile(context),
                   storeTile(context),
                   storeTile(context),
+                  SizedBox(
+                    height: 100,
+                  )
                 ],
               ),
             ),
