@@ -215,7 +215,6 @@ class StoreDetails extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 10),
             Text("Note : Only Cash Payments")
           ],
         ),

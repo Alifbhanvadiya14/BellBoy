@@ -1,3 +1,4 @@
+import 'package:application/screen2/home.dart';
 import 'package:flutter/material.dart';
 
 import 'screen1/home.dart';
@@ -51,7 +52,14 @@ class HomePage extends StatelessWidget {
               color: Colors.blue,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12)),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => HomeScreen(),
+                  ),
+                );
+              },
               child: Text(
                 "Screen 2",
                 style: TextStyle(color: Colors.white),
