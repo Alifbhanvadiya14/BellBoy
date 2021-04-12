@@ -123,7 +123,7 @@ class Stores extends StatelessWidget {
           );
         },
         child: Container(
-          height: 110, //MediaQuery.of(context).size.height * 0.14,
+          height: 130, //MediaQuery.of(context).size.height * 0.14,
           decoration: BoxDecoration(
             color: Colors.white,
             //borderRadius: BorderRadius.circular(10),

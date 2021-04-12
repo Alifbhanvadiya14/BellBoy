@@ -30,6 +30,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter_slidable:
   table_calendar:
+  google_fonts:
+  nb_utils:
 
 dev_dependencies:
   flutter_test:

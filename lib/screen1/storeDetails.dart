@@ -88,209 +88,225 @@ class StoreDetails extends StatelessWidget {
         ),
       ),
       body: SingleChildScrollView(
-        physics: NeverScrollableScrollPhysics(),
+        // physics: NeverScrollableScrollPhysics(),
         child: Stack(
           children: [
             Container(
               color: Color(0xfff28b05),
               height: MediaQuery.of(context).size.height / 3,
             ),
-            Padding(
-              padding: const EdgeInsets.all(12.0),
-              child: Container(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    SizedBox(height: MediaQuery.of(context).size.height / 8),
-                    Container(
-                      padding: EdgeInsets.all(16),
-                      height: 180,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(12),
-                        color: Colors.white,
-                        boxShadow: [
-                          BoxShadow(
-                            blurRadius: 3,
-                            color: Colors.grey[300],
-                          ),
-                        ],
-                      ),
-                      child: Column(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                RichText(
-                                  text: new TextSpan(
-                                    text: 'Verified ',
-                                    style: TextStyle(
-                                      color: Colors.blue,
-                                      fontSize: 16,
-                                    ),
-                                    children: <TextSpan>[
-                                      new TextSpan(
-                                        text: " Bellboy Store",
-                                        style: new TextStyle(
-                                            fontSize: 16,
-                                            color: Colors.black54,
-                                            fontWeight: FontWeight.w600),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                Row(
-                                  children: [
-                                    Icon(
-                                      Icons.map,
-                                      size: 16,
-                                      color: Colors.grey[500],
-                                    ),
-                                    Text(
-                                      "0.65 km",
-                                      style: TextStyle(
-                                        color: Colors.blueGrey,
-                                        fontSize: 13,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ],
+            Container(
+              // color: Colors.red,
+              child: Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: Container(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      SizedBox(height: MediaQuery.of(context).size.height / 8),
+                      Container(
+                        padding: EdgeInsets.all(16),
+                        height: 180,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(12),
+                          color: Colors.white,
+                          boxShadow: [
+                            BoxShadow(
+                              blurRadius: 3,
+                              color: Colors.grey[300],
                             ),
-                          ),
-                          //SizedBox(height: 5),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text(
-                                  "Kashmora Gate",
-                                  style: TextStyle(
-                                    fontSize: 20,
-                                    color: Colors.black.withOpacity(0.7),
-                                    fontWeight: FontWeight.w700,
-                                  ),
-                                ),
-                                Text(
-                                  "₹ 80 / Day / Item",
-                                  style: TextStyle(
-                                    fontSize: 16,
-                                    color: Colors.black.withOpacity(0.7),
-                                    fontWeight: FontWeight.w700,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          Divider(thickness: 2),
-                          SizedBox(height: 10),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              Column(
+                          ],
+                        ),
+                        child: Column(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
-                                  Text("Opening Hours"),
-                                  SizedBox(height: 5),
+                                  RichText(
+                                    text: new TextSpan(
+                                      text: 'Verified ',
+                                      style: TextStyle(
+                                        color: Colors.blue,
+                                        fontSize: 16,
+                                      ),
+                                      children: <TextSpan>[
+                                        new TextSpan(
+                                          text: " Bellboy Store",
+                                          style: new TextStyle(
+                                              fontSize: 16,
+                                              color: Colors.black54,
+                                              fontWeight: FontWeight.w600),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
                                   Row(
                                     children: [
                                       Icon(
-                                        Icons.watch_later_outlined,
+                                        Icons.map,
                                         size: 16,
-                                        color: Colors.yellow[800],
+                                        color: Colors.grey[500],
                                       ),
                                       Text(
-                                        "  10:00 AM - 8:30 PM",
+                                        "0.65 km",
                                         style: TextStyle(
                                           color: Colors.blueGrey,
-                                          fontSize: 12,
+                                          fontSize: 13,
                                         ),
                                       ),
                                     ],
                                   ),
                                 ],
                               ),
-                              Column(
+                            ),
+                            //SizedBox(height: 5),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
-                                  Text("Items Insuranced"),
-                                  SizedBox(height: 5),
-                                  Row(
-                                    children: [
-                                      Icon(
-                                        Icons.privacy_tip,
-                                        size: 16,
-                                        color: Colors.yellow[800],
-                                      ),
-                                      Text(
-                                        "  Upto 5000",
-                                        style: TextStyle(
-                                          color: Colors.blueGrey,
-                                          fontSize: 12,
-                                        ),
-                                      ),
-                                    ],
+                                  Text(
+                                    "Kashmora Gate",
+                                    style: TextStyle(
+                                      fontSize: 20,
+                                      color: Colors.black.withOpacity(0.7),
+                                      fontWeight: FontWeight.w700,
+                                    ),
+                                  ),
+                                  Text(
+                                    "₹ 80 / Day / Item",
+                                    style: TextStyle(
+                                      fontSize: 16,
+                                      color: Colors.black.withOpacity(0.7),
+                                      fontWeight: FontWeight.w700,
+                                    ),
                                   ),
                                 ],
-                              )
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                    SizedBox(height: 20),
-                    Container(
-                      padding: EdgeInsets.all(12),
-                      height: 120,
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(12),
-                        color: Colors.white,
-                        boxShadow: [
-                          BoxShadow(
-                            blurRadius: 3,
-                            color: Colors.grey[300],
-                          ),
-                        ],
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            "Note",
-                            style: TextStyle(
-                              color: Colors.black54,
-                              fontSize: 18,
-                              fontWeight: FontWeight.w600,
+                              ),
                             ),
-                          ),
-                          SizedBox(height: 5),
-                          Text("-  Only Cash Payments"),
-                          Text("-  Only Cash Payments"),
-                          Text("-  Only Cash Payments"),
-                          Text("-  Only Cash Payments"),
-                        ],
+                            Divider(thickness: 2),
+                            SizedBox(height: 10),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Column(
+                                  children: [
+                                    Text("Opening Hours"),
+                                    SizedBox(height: 5),
+                                    Row(
+                                      children: [
+                                        Icon(
+                                          Icons.watch_later_outlined,
+                                          size: 16,
+                                          color: Colors.yellow[800],
+                                        ),
+                                        Text(
+                                          "  10:00 AM - 8:30 PM",
+                                          style: TextStyle(
+                                            color: Colors.blueGrey,
+                                            fontSize: 12,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                                Column(
+                                  children: [
+                                    Text("Items Insuranced"),
+                                    SizedBox(height: 5),
+                                    Row(
+                                      children: [
+                                        Icon(
+                                          Icons.privacy_tip,
+                                          size: 16,
+                                          color: Colors.yellow[800],
+                                        ),
+                                        Text(
+                                          "  Upto 5000",
+                                          style: TextStyle(
+                                            color: Colors.blueGrey,
+                                            fontSize: 12,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                )
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
-                    ),
-                    SizedBox(height: 16),
-                    Text(
-                      "Nearby Stores",
-                      style: TextStyle(
-                        color: Colors.black87,
-                        fontSize: 18,
-                        fontWeight: FontWeight.w600,
+                      SizedBox(height: 20),
+                      Container(
+                        padding: EdgeInsets.all(12),
+                        height: 120,
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(12),
+                          color: Colors.white,
+                          boxShadow: [
+                            BoxShadow(
+                              blurRadius: 3,
+                              color: Colors.grey[300],
+                            ),
+                          ],
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "Note",
+                              style: TextStyle(
+                                color: Colors.black54,
+                                fontSize: 18,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                            SizedBox(height: 5),
+                            Text("-  Only Cash Payments"),
+                            Text("-  Only Cash Payments"),
+                            Text("-  Only Cash Payments"),
+                            Text("-  Only Cash Payments"),
+                          ],
+                        ),
                       ),
-                    ),
-                    SizedBox(height: 10),
-                    storeTile(context)
-                    // ListView(
-                    //   shrinkWrap: true,
-                    //   physics: NeverScrollableScrollPhysics(),
-                    //   scrollDirection: Axis.horizontal,
-                    //   children: [storeTile(context)],
-                    // )
-                  ],
+                      SizedBox(height: 16),
+                      Text(
+                        "Nearby Stores",
+                        style: TextStyle(
+                          color: Colors.black87,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                      SizedBox(height: 10),
+                      Container(
+                        height: 200,
+                        child: ListView(
+                          scrollDirection: Axis.horizontal,
+                          children: [
+                            storeTile(context),
+                            storeTile(context),
+                            storeTile(context),
+                          ],
+                        ),
+                      ),
+
+                      // ListView(
+                      //   shrinkWrap: true,
+                      //   physics: NeverScrollableScrollPhysics(),
+                      //   scrollDirection: Axis.horizontal,
+                      //   children: [storeTile(context)],
+                      // )
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -302,6 +318,7 @@ class StoreDetails extends StatelessWidget {
 
   Widget storeTile(BuildContext context) {
     return Container(
+      margin: EdgeInsets.symmetric(horizontal: 10),
       height: 180,
       width: 200,
       decoration: BoxDecoration(
@@ -331,7 +348,7 @@ class StoreDetails extends StatelessWidget {
                   text: new TextSpan(
                     text: 'Verified ',
                     style: TextStyle(
-                      color: Colors.blue,
+                      color: Colors.orange,
                       fontSize: 14,
                     ),
                     children: <TextSpan>[
@@ -357,7 +374,7 @@ class StoreDetails extends StatelessWidget {
                         text: "₹ 80",
                         style: new TextStyle(
                             fontSize: 14,
-                            color: Colors.orange,
+                            color: Colors.blue,
                             fontWeight: FontWeight.w600),
                       ),
                     ],

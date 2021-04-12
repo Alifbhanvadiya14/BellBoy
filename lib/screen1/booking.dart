@@ -379,7 +379,60 @@ class Booking extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(height: 100),
+                      Padding(
+                    padding: const EdgeInsets.all(12.0),
+                    child: Container(
+                      padding: EdgeInsets.all(12),
+                      height: 200,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        boxShadow: [
+                          BoxShadow(blurRadius: 3, color: Colors.grey[300])
+                        ],
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text("Mobile"),
+                          SizedBox(height: 3),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 12.0),
+                            child: TextField(
+                              controller: phoneController,
+                              decoration: InputDecoration(
+                                hintText: "Enter Phone",
+                                contentPadding: EdgeInsets.symmetric(
+                                    horizontal: 8, vertical: 2),
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 12.0),
+                            child: TextField(
+                              controller: nameController,
+                              decoration: InputDecoration(
+                                hintText: "Full Name",
+                                contentPadding: EdgeInsets.symmetric(
+                                    horizontal: 8, vertical: 2),
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 12.0),
+                            child: TextField(
+                              controller: emailController,
+                              decoration: InputDecoration(
+                                hintText: "Enter Email",
+                                contentPadding: EdgeInsets.symmetric(
+                                    horizontal: 8, vertical: 2),
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 150),
                 ],
               ),
             ),

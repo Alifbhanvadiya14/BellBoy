@@ -1,13 +1,16 @@
+import 'package:application/screen2/dialogs.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
+import 'package:google_fonts/google_fonts.dart';
+
 import 'package:table_calendar/table_calendar.dart';
 
-class HomeScreen extends StatefulWidget {
+class HomeScreen2 extends StatefulWidget {
   @override
-  _HomeScreenState createState() => _HomeScreenState();
+  _HomeScreen2State createState() => _HomeScreen2State();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _HomeScreen2State extends State<HomeScreen2> {
   int selectedIndex = 0;
 
   Color _selectedColor = Colors.blue;
@@ -43,19 +46,32 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
       appBar: AppBar(
-        backgroundColor: Colors.blue,
-        title: Padding(
-          padding: EdgeInsets.symmetric(vertical: 8.0),
-          child: TextField(
-            decoration: InputDecoration(
-              hintText: "Search...",
-              fillColor: Colors.white,
-              filled: true,
-              contentPadding: EdgeInsets.all(6),
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(20),
+        // backgroundColor: Colors.blue,
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+              gradient: LinearGradient(
+            // begin: ,
+            colors: [
+              Colors.blue,
+              Colors.blue.shade700,
+            ],
+          )),
+        ),
+        title: Container(
+          margin: EdgeInsets.symmetric(vertical: 15),
+          child: Padding(
+            padding: EdgeInsets.symmetric(vertical: 8.0),
+            child: TextField(
+              decoration: InputDecoration(
+                hintText: "  Search...",
+                fillColor: Colors.white,
+                filled: true,
+                contentPadding: EdgeInsets.all(6),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                suffixIcon: Icon(Icons.more_vert),
               ),
-              suffixIcon: Icon(Icons.more_vert),
             ),
           ),
         ),
@@ -188,7 +204,7 @@ class _HomeScreenState extends State<HomeScreen> {
         children: [
           Text(
             "Monday, March 22,2021",
-            style: TextStyle(
+            style: GoogleFonts.lato(
                 fontSize: 16,
                 color: Color(0xff353bf0),
                 fontWeight: FontWeight.bold),
@@ -211,7 +227,7 @@ class _HomeScreenState extends State<HomeScreen> {
         children: [
           Text(
             "Monday, March 22,2021",
-            style: TextStyle(
+            style: GoogleFonts.lato(
                 fontSize: 16,
                 color: Color(0xff353bf0),
                 fontWeight: FontWeight.bold),
@@ -223,7 +239,7 @@ class _HomeScreenState extends State<HomeScreen> {
           SizedBox(height: 16),
           Text(
             "Wednesday, March 24,2021",
-            style: TextStyle(
+            style: GoogleFonts.lato(
                 fontSize: 16,
                 color: Color(0xff353bf0),
                 fontWeight: FontWeight.bold),
@@ -235,7 +251,7 @@ class _HomeScreenState extends State<HomeScreen> {
           SizedBox(height: 16),
           Text(
             "Friday, March 26,2021",
-            style: TextStyle(
+            style: GoogleFonts.lato(
                 fontSize: 16,
                 color: Color(0xff353bf0),
                 fontWeight: FontWeight.bold),
@@ -247,7 +263,7 @@ class _HomeScreenState extends State<HomeScreen> {
           SizedBox(height: 16),
           Text(
             "Saturday, March 27,2021",
-            style: TextStyle(
+            style: GoogleFonts.lato(
                 fontSize: 16,
                 color: Color(0xff353bf0),
                 fontWeight: FontWeight.bold),
@@ -282,6 +298,7 @@ class _HomeScreenState extends State<HomeScreen> {
   _showPopupMenu(Offset offset) async {
     double left = offset.dx;
     double top = offset.dy;
+
     await showMenu(
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(16),
@@ -312,7 +329,12 @@ class _HomeScreenState extends State<HomeScreen> {
               side: BorderSide(width: 2, color: Colors.grey),
             ),
             onPressed: () {
-              dialog(context);
+              // dialog(context);
+              //
+              showDialog(
+                context: context,
+                builder: (BuildContext context) => CustomDelete(),
+              );
             },
             child: Text(
               "Delete",
@@ -399,17 +421,49 @@ class _HomeScreenState extends State<HomeScreen> {
       secondaryActions: [
         IconSlideAction(
           iconWidget: GestureDetector(
-            onTapDown: ((TapDownDetails details) {
-              _showPopupMenu(details.globalPosition);
-            }),
-            child: Icon(Icons.settings),
-          ),
+              onTapDown: ((TapDownDetails details) {
+                // _showPopupMenu(details.globalPosition);
+              }),
+              // child: Icon(Icons.settings),.
+              child: PopupMenuButton(
+                icon: Icon(
+                  Icons.settings,
+                  // color: appStore.textPrimaryColor,
+                  color: Colors.black,
+                ),
+                onSelected: (value) {
+                  // toast(value);
+                  if (value == "Delete") {
+                    showDialog(
+                      context: context,
+                      builder: (BuildContext context) => CustomDelete(),
+                    );
+                  }
+                },
+                itemBuilder: (context) {
+                  var list = List<PopupMenuEntry<Object>>();
+                  list.add(
+                    PopupMenuItem(
+                      child: Text("Edit"),
+                      value: 'Edit',
+                    ),
+                  );
+                  list.add(
+                    PopupMenuItem(
+                      child: Text("Delete"),
+                      value: 'Delete',
+                    ),
+                  );
+
+                  return list;
+                },
+              )),
         )
       ],
       child: Container(
         decoration: BoxDecoration(
           color: Colors.white,
-          boxShadow: [BoxShadow(blurRadius: 1)],
+          boxShadow: [BoxShadow(blurRadius: 0.2)],
           borderRadius: BorderRadius.circular(8),
           shape: BoxShape.rectangle,
         ),
@@ -420,7 +474,7 @@ class _HomeScreenState extends State<HomeScreen> {
             children: [
               Text(
                 "Digital Dispute Room",
-                style: TextStyle(
+                style: GoogleFonts.roboto(
                     fontSize: 16,
                     color: Color(0xff353bf0),
                     fontWeight: FontWeight.w600),
@@ -431,7 +485,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 children: [
                   Text(
                     "8 AM - 12:30 PM",
-                    style: TextStyle(
+                    style: GoogleFonts.roboto(
                         fontSize: 12,
                         color: Color(0xff353bf0),
                         fontWeight: FontWeight.w600),
@@ -439,7 +493,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   VerticalDivider(),
                   Text(
                     "32-145 NW Corner",
-                    style: TextStyle(
+                    style: GoogleFonts.roboto(
                         fontSize: 12,
                         color: Color(0xff353bf0),
                         fontWeight: FontWeight.w600),
