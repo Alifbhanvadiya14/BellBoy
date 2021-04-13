@@ -32,6 +32,8 @@ dependencies:
   table_calendar:
   google_fonts:
   nb_utils:
+  day_picker:
+
 
 dev_dependencies:
   flutter_test:

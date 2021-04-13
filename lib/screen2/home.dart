@@ -1,3 +1,4 @@
+import 'package:application/screen2/booking.dart';
 import 'package:application/screen2/dialogs.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
@@ -31,7 +32,14 @@ class _HomeScreen2State extends State<HomeScreen2> {
           ),
           color: Colors.blue,
           elevation: 0,
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (_) => Booking(),
+              ),
+            );
+          },
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 16.0),
             child: Text(
@@ -441,7 +449,7 @@ class _HomeScreen2State extends State<HomeScreen2> {
                   }
                 },
                 itemBuilder: (context) {
-                  var list = List<PopupMenuEntry<Object>>();
+                  var list = [];
                   list.add(
                     PopupMenuItem(
                       child: Text("Edit"),
